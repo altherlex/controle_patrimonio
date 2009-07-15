@@ -1,0 +1,18 @@
+<p>
+  <b>Descricao:</b>
+  <%=h @patrimonio.descricao %>
+</p>
+
+<p>
+  <b>Situacao:</b>
+  <%=h @patrimonio.situacao %>
+</p>
+
+<p>
+  <b>Motivo:</b>
+  <%=h @patrimonio.motivo %>
+</p>
+
+
+<%= link_to 'Edit', edit_patrimonio_path(@patrimonio) %> |
+<%= link_to 'Back', patrimonios_path %>

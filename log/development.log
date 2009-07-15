@@ -1,0 +1,107 @@
+  [4;36;1mSQL (9.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (356.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (178.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePatrimonios (20090715005745)
+  [4;35;1mSQL (55.0ms)[0m   [0mCREATE TABLE `patrimonios` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `descricao` varchar(255), `situacao` varchar(255), `motivo` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090715005745')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (17.0ms)[0m   [0;1mSHOW FIELDS FROM `patrimonios`[0m
+  [4;35;1mSQL (10.0ms)[0m   [0mdescribe `patrimonios`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW KEYS FROM `patrimonios`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatrimoniosController#index (for 127.0.0.1 at 2009-07-14 22:04:24) [GET]
+  [4;36;1mPatrimonio Load (1.0ms)[0m   [0;1mSELECT * FROM `patrimonios` [0m
+Rendering template within layouts/patrimonios
+Rendering patrimonios/index
+Completed in 4138ms (View: 4051, DB: 3) | 200 OK [http://localhost/patrimonios]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatrimoniosController#new (for 127.0.0.1 at 2009-07-14 22:04:34) [GET]
+  [4;35;1mPatrimonio Columns (31.0ms)[0m   [0mSHOW FIELDS FROM `patrimonios`[0m
+Rendering template within layouts/patrimonios
+Rendering patrimonios/new
+Completed in 71ms (View: 17, DB: 32) | 200 OK [http://localhost/patrimonios/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatrimoniosController#create (for 127.0.0.1 at 2009-07-14 22:05:07) [POST]
+  Parameters: {"commit"=>"Create", "patrimonio"=>{"motivo"=>"porque sim", "situacao"=>"ativo", "descricao"=>"Tripe"}, "authenticity_token"=>"seTKgvcOK53O9+yeqQ8JoyYIWCq/eZv5trtZw+wrvwg="}
+  [4;36;1mPatrimonio Columns (17.0ms)[0m   [0;1mSHOW FIELDS FROM `patrimonios`[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPatrimonio Create (1.0ms)[0m   [0;1mINSERT INTO `patrimonios` (`updated_at`, `motivo`, `situacao`, `descricao`, `created_at`) VALUES('2009-07-15 01:05:07', 'porque sim', 'ativo', 'Tripe', '2009-07-15 01:05:07')[0m
+  [4;35;1mSQL (46.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/patrimonios/1
+Completed in 230ms (DB: 72) | 302 Found [http://localhost/patrimonios]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatrimoniosController#show (for 127.0.0.1 at 2009-07-14 22:05:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPatrimonio Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `patrimonios`[0m
+  [4;35;1mPatrimonio Load (119.0ms)[0m   [0mSELECT * FROM `patrimonios` WHERE (`patrimonios`.`id` = 1) [0m
+Rendering template within layouts/patrimonios
+Rendering patrimonios/show
+Completed in 154ms (View: 13, DB: 129) | 200 OK [http://localhost/patrimonios/1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatrimoniosController#index (for 127.0.0.1 at 2009-07-14 22:05:31) [GET]
+  [4;36;1mPatrimonio Load (1.0ms)[0m   [0;1mSELECT * FROM `patrimonios` [0m
+Rendering template within layouts/patrimonios
+Rendering patrimonios/index
+  [4;35;1mPatrimonio Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `patrimonios`[0m
+Completed in 36ms (View: 8, DB: 16) | 200 OK [http://localhost/patrimonios]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatrimoniosController#edit (for 127.0.0.1 at 2009-07-14 22:10:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPatrimonio Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `patrimonios`[0m
+  [4;35;1mPatrimonio Load (2.0ms)[0m   [0mSELECT * FROM `patrimonios` WHERE (`patrimonios`.`id` = 1) [0m
+Rendering template within layouts/patrimonios
+Rendering patrimonios/edit
+Completed in 70ms (View: 40, DB: 11) | 200 OK [http://localhost/patrimonios/1/edit]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatrimoniosController#index (for 127.0.0.1 at 2009-07-14 22:10:14) [GET]
+  [4;36;1mPatrimonio Load (1.0ms)[0m   [0;1mSELECT * FROM `patrimonios` [0m
+Rendering template within layouts/patrimonios
+Rendering patrimonios/index
+  [4;35;1mPatrimonio Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `patrimonios`[0m
+Completed in 44ms (View: 12, DB: 8) | 200 OK [http://localhost/patrimonios]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatrimoniosController#new (for 127.0.0.1 at 2009-07-14 22:16:50) [GET]
+  [4;36;1mPatrimonio Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `patrimonios`[0m
+Rendering template within layouts/patrimonios
+Rendering patrimonios/new
+Completed in 35ms (View: 10, DB: 8) | 200 OK [http://localhost/patrimonios/new]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatrimoniosController#index (for 127.0.0.1 at 2009-07-14 22:20:23) [GET]
+  [4;35;1mPatrimonio Load (2.0ms)[0m   [0mSELECT * FROM `patrimonios` [0m
+Rendering template within layouts/patrimonios
+Rendering patrimonios/index
+  [4;36;1mPatrimonio Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `patrimonios`[0m
+Completed in 75ms (View: 31, DB: 19) | 200 OK [http://localhost/patrimonios]

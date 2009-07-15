@@ -1,0 +1,23 @@
+<h1>New patrimonio</h1>
+
+<% form_for(@patrimonio) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :descricao %><br />
+    <%= f.text_field :descricao %>
+  </p>
+  <p>
+    <%= f.label :situacao %><br />
+    <%= f.text_field :situacao %>
+  </p>
+  <p>
+    <%= f.label :motivo %><br />
+    <%= f.text_field :motivo %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', patrimonios_path %>

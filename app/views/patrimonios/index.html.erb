@@ -1,0 +1,24 @@
+<h1>Listing patrimonios</h1>
+
+<table>
+  <tr>
+    <th>Descricao</th>
+    <th>Situacao</th>
+    <th>Motivo</th>
+  </tr>
+
+<% @patrimonios.each do |patrimonio| %>
+  <tr>
+    <td><%=h patrimonio.descricao %></td>
+    <td><%=h patrimonio.situacao %></td>
+    <td><%=h patrimonio.motivo %></td>
+    <td><%= link_to 'Show', patrimonio %></td>
+    <td><%= link_to 'Edit', edit_patrimonio_path(patrimonio) %></td>
+    <td><%= link_to 'Destroy', patrimonio, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New patrimonio', new_patrimonio_path %>

@@ -1,0 +1,8 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  database: controle_patrimonio
+  pool: 5
+  username: root
+  password: password
+  host: localhost
