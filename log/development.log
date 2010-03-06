@@ -105,3 +105,84 @@ Rendering template within layouts/patrimonios
 Rendering patrimonios/index
   [4;36;1mPatrimonio Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `patrimonios`[0m
 Completed in 75ms (View: 31, DB: 19) | 200 OK [http://localhost/patrimonios]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPatrimonio Load (11.0ms)[0m   [0;1mSELECT * FROM `patrimonios` [0m
+  [4;35;1mPatrimonio Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `patrimonios`[0m
+  [4;36;1mPatrimonio Load (25.0ms)[0m   [0;1mSELECT * FROM `patrimonios` LIMIT 1[0m
+  [4;35;1mPatrimonio Load (1.0ms)[0m   [0mSELECT * FROM `patrimonios` LIMIT 1[0m
+  [4;36;1mPatrimonio Load (1.0ms)[0m   [0;1mSELECT * FROM `patrimonios` LIMIT 1[0m
+  [4;35;1mPatrimonio Load (2.0ms)[0m   [0mSELECT * FROM `patrimonios` LIMIT 1[0m
+  [4;36;1mPatrimonio Load (1.0ms)[0m   [0;1mSELECT * FROM `patrimonios` LIMIT 1[0m
+  [4;35;1mPatrimonio Load (2.0ms)[0m   [0mSELECT * FROM `patrimonios` LIMIT 1[0m
+  [4;36;1mPatrimonio Load (2.0ms)[0m   [0;1mSELECT * FROM `patrimonios` LIMIT 1[0m
+  [4;35;1mPatrimonio Load (2.0ms)[0m   [0mSELECT * FROM `patrimonios` LIMIT 1[0m
+  [4;36;1mPatrimonio Load (3.0ms)[0m   [0;1mSELECT * FROM `patrimonios` LIMIT 1[0m
+  [4;35;1mPatrimonio Load (2.0ms)[0m   [0mSELECT * FROM `patrimonios` LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatrimoniosController#index (for 127.0.0.1 at 2010-03-05 20:31:43) [GET]
+  [4;36;1mPatrimonio Load (0.0ms)[0m   [0;1mSELECT * FROM `patrimonios` [0m
+Rendering template within layouts/patrimonios
+Rendering patrimonios/index
+Completed in 45ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatrimoniosController#index (for 127.0.0.1 at 2010-03-05 20:34:35) [GET]
+  [4;35;1mPatrimonio Load (1.0ms)[0m   [0mSELECT * FROM `patrimonios` [0m
+Rendering template within layouts/patrimonios
+Rendering patrimonios/index
+Completed in 25ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatrimoniosController#index (for 127.0.0.1 at 2010-03-05 20:37:44) [GET]
+  [4;36;1mPatrimonio Load (1.0ms)[0m   [0;1mSELECT * FROM `patrimonios` [0m
+Rendering template within layouts/patrimonios
+Rendering patrimonios/index
+Completed in 33ms (View: 10, DB: 2) | 200 OK [http://localhost/patrimonios]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatrimoniosController#index (for 127.0.0.1 at 2010-03-05 20:38:10) [GET]
+  [4;35;1mPatrimonio Load (1.0ms)[0m   [0mSELECT * FROM `patrimonios` [0m
+Rendering template within layouts/patrimonios
+Rendering patrimonios/index
+Completed in 17ms (View: 5, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatrimoniosController#index (for 127.0.0.1 at 2010-03-05 20:42:06) [GET]
+  [4;36;1mPatrimonio Load (1.0ms)[0m   [0;1mSELECT * FROM `patrimonios` [0m
+Rendering template within layouts/application
+Rendering patrimonios/index
+Completed in 47ms (View: 35, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatrimoniosController#index to pdf (for 127.0.0.1 at 2010-03-05 20:49:17) [GET]
+  Parameters: {"codigo"=>"", "titulo"=>"", "situacao"=>"T"}
+  [4;35;1mPatrimonio Load (1.0ms)[0m   [0mSELECT * FROM `patrimonios` [0m
+  [4;36;1mPatrimonio Load (2.0ms)[0m   [0;1mSELECT * FROM `patrimonios` ORDER BY titulo[0m
+  [4;35;1mPatrimonio Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `patrimonios`[0m
+  [4;36;1mDominio Load (29.0ms)[0m   [0;1mSELECT * FROM `dominios` WHERE (grupo = 2 AND valor = 'M') LIMIT 1[0m
+  [4;35;1mDominio Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `dominios`[0m
+  [4;36;1mDominio Load (1.0ms)[0m   [0;1mSELECT * FROM `dominios` WHERE (grupo = 1 AND valor = 'E') LIMIT 1[0m
+  [4;35;1mDominio Load (0.0ms)[0m   [0mSELECT * FROM `dominios` WHERE (grupo = 2 AND valor = 'O') LIMIT 1[0m
+  [4;36;1mDominio Load (1.0ms)[0m   [0;1mSELECT * FROM `dominios` WHERE (grupo = 1 AND valor = 'M') LIMIT 1[0m
+  [4;35;1mDominio Load (1.0ms)[0m   [0mSELECT * FROM `dominios` WHERE (grupo = 2 AND valor = 'P') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `dominios` WHERE (grupo = 1 AND valor = 'E') LIMIT 1[0m
+  [4;35;1mDominio Load (1.0ms)[0m   [0mSELECT * FROM `dominios` WHERE (grupo = 2 AND valor = 'V') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `dominios` WHERE (grupo = 1 AND valor = 'E') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `dominios` WHERE (grupo = 2 AND valor = 'O') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `dominios` WHERE (grupo = 1 AND valor = 'M') LIMIT 1[0m
+Sending data patrimonios.pdf
+Completed in 649ms (View: 2, DB: 45) | 200 OK [http://localhost/patrimonios.pdf?codigo=&titulo=&situacao=T]

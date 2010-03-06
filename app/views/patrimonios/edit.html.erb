@@ -1,24 +1,9 @@
-<h1>Editing patrimonio</h1>
+<% 
+	@menu_lateral = [ "#{link_to 'Criar', new_patrimonio_path}", "#{link_to 'Consultar', patrimonios_path}"]
+%>
 
-<% form_for(@patrimonio) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :descricao %><br />
-    <%= f.text_field :descricao %>
-  </p>
-  <p>
-    <%= f.label :situacao %><br />
-    <%= f.text_field :situacao %>
-  </p>
-  <p>
-    <%= f.label :motivo %><br />
-    <%= f.text_field :motivo %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @patrimonio %> |
-<%= link_to 'Back', patrimonios_path %>
+<div class='topo'>
+	<p class='icone'><%= image_tag("arq_32.png") %></p>
+	<p class='titulo'>Editar Patrimonio</p>
+</div>
+<%= render :partial => 'form', :locals => { :patrimonio => @patrimonio } %>

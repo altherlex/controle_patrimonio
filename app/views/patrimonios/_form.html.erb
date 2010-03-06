@@ -1,0 +1,71 @@
+<% form_for(@patrimonio) do |f| %>
+  <%= f.error_messages %>
+
+<div class='box_2'>
+<div class='titulo'>
+	<div class='botoes'>
+	<%= f.submit 'Salvar', :class => 'botoes' %>
+	<%if !@patrimonio.id.nil?%>
+		<%= link_to_function 'Cancelar', "location.href='#{patrimonio_path(@patrimonio)}'" %>
+	<%else%>
+		<%= link_to_function 'Cancelar', "history.back()" %>
+	<%end%>
+	</div>
+</div>
+<div class='corpo'>
+<table>
+	<tr>
+		<td class='campo'><%= f.label :titulo %></td>
+		<td><%= f.text_field :titulo %></td>
+	</tr>
+	<tr>
+		<td class='campo'><%= f.label :descricao %></td>
+    	<td><%= f.text_area(:descricao, :size => "40x3") %></td>
+	</tr>
+	<tr>
+    	<td class='campo'><%= f.label :situacao %></td>
+		<td><%= select_tag 'patrimonio[situacao]', options_for_select( [['Ativo', 'A'], ['Inativo', 'I']], 'A') %></td>
+	</tr>
+	<tr id='tr_motivo' style='display: none;'>
+    	<td class='campo'><%= f.label :motivo %></td>
+    	<td><%= f.text_area(:motivo, {:size => "40x3" }) %></td>		
+	</tr>  
+	<tr>
+		<td class='campo'><%= f.label :segmento %></td>
+		<td><%= select("patrimonio", "segmento", Dominio.carregar_segmento.collect {|it| [ it.conteudo, it.valor ] } ) %></td>
+	</tr>
+	<tr>
+    	<td class='campo'><%= f.label :estado_fisico %></td>
+		<td><%= select("patrimonio", "estado_fisico", Dominio.carregar_estado_fisico.collect {|it| [ it.conteudo, it.valor ] } ) %></td>
+	</tr>
+	<tr class=' tr_eletrico'>
+    	<td class='campo'><%= f.label :voltagem %></td>
+		<td><%= f.text_field :voltagem %></td>
+	</tr>
+	<tr class='tr_eletrico'>
+    	<td class='campo'><%= f.label :tipo_conector %></td>
+		<td><%= f.text_field :tipo_conector %></td>
+	</tr>
+	<tr>
+
+	</tr>
+<% end %>
+</table>
+</div>
+</div>
+<script>
+document.observe("dom:loaded", function() {
+	$('patrimonio_situacao').observe('change', fn_regra_situacao );
+	$('patrimonio_segmento').observe('change', fn_regra_segmento );	
+});
+
+function fn_regra_situacao(){
+	var situacao = $F('patrimonio_situacao') == 'A';
+	$('tr_motivo').style.display = (situacao)? 'none' : '';
+}
+
+function fn_regra_segmento(){
+	var segmento = $F('patrimonio_segmento') == 'E';
+	$$('table tr.tr_eletrico').each(function(item) { item.style.display = (!segmento)? 'none' : '' });
+}
+</script>

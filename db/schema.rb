@@ -9,14 +9,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090715005745) do
+ActiveRecord::Schema.define(:version => 20090720012726) do
+
+  create_table "dominios", :force => true do |t|
+    t.string   "conteudo"
+    t.string   "valor"
+    t.integer  "grupo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "patrimonios", :force => true do |t|
+    t.string   "titulo"
     t.string   "descricao"
     t.string   "situacao"
     t.string   "motivo"
+    t.string   "voltagem"
+    t.string   "tipo_conector"
+    t.string   "estado_fisico"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "segmento"
   end
 
 end

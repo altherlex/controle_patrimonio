@@ -1,0 +1,209 @@
+html, body {
+    background-color:#FFFFFF;
+    border:medium none;
+    height:100%;
+    margin:0;
+    padding:0;
+    width:75%;
+}
+
+.conteudo {
+    clear:both;
+    height:86%;
+}
+
+.menu_lateral {
+//    float: left;
+    background-color: #F7F7F7;
+    border: 1px solid black;
+    height:30px;
+    margin-bottom:0;
+//    margin-left:5px !important;
+    margin-right:0;
+    margin-top:0;
+//    width:170px;
+    background:transparent url(/images/menu.png) repeat scroll 0 0;
+}
+
+.menu_lateral a {
+    padding-left:15px;
+    padding-right:15px;
+    padding-top:15px;    
+}
+
+/*
+.menu_lateral a:hover {
+    color: #000000;
+    -moz-border-radius-bottomleft:3px;
+    -moz-border-radius-bottomright:3px;
+    -moz-border-radius-topleft:3px;
+    -moz-border-radius-topright:3px;
+    background-color:#ECE9D8;
+    padding-bottom:8px;
+    padding-left:8px;
+    padding-right:8px;
+    padding-top:8px;    
+}
+*/
+
+a:hover {
+    text-decoration:underline;
+}
+
+a { 
+    color: #000; 
+}
+
+.conteudo .box_1, .conteudo .box_2 {
+    margin-bottom:10px;
+}
+
+.conteudo .box_1 .corpo, .conteudo .box_2 .corpo {
+    background-color:#F3F3EC;
+    border-bottom:2px solid #236FBD; //#236FBD;
+    padding:10px 20px 25px;
+    width:auto !important;
+}
+
+.conteudo .box_2 .corpo table{
+    width:100%
+}
+
+.conteudo .box_2 .titulo{
+    background-color:#EEECD1;
+    border-bottom:1px solid #FFFFFF;
+    border-top:4px solid #236FBD; //#236FBD;
+    color:#000000;
+}
+
+.barra_top {
+    background:transparent url(/images/bvfilmes.jpg) no-repeat scroll 0 0;
+    float: top;
+    border: 1px solid black;
+    background-color: #000;
+    padding-left: 7px;
+    margin-bottom:2px;
+    height:85px;
+}
+
+.botao {
+    margin-top:-22px;
+    text-align:right;
+}
+
+.campo {
+    border-bottom:1px solid #EEECD1;
+    color:#444444;
+    font-weight:bold;
+    padding:4px 6px 4px 0;
+    text-align:right;
+    width:15%;
+    font-family:Verdana,Arial,Helvetica,sans-serif;
+    font-size:11px;
+}
+
+.titulo{
+    background-color:#3A5978;
+    color:#FFFFFF;
+    font-family:Verdana,Arial,Helvetica,sans-serif;
+    font-size:12px;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:bold;
+    line-height:normal;
+    padding:3px 0 3px 4px;
+}
+
+.topo {
+    background-color:#3A5978; //#236FBD;
+    height:40px;
+    margin-bottom:10px;
+}
+
+.topo p.icone {
+    float:left;
+    margin:5px 0 0 5px;
+    padding:0;
+}
+
+.topo p.titulo {
+    color:#FFFFFF;
+    -x-system-font:none;
+    float:left;
+    font-family:Verdana,Arial,Helvetica,sans-serif;
+    font-size:13px;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:bold;
+    line-height:normal;
+    margin:10px 0 0 5px;
+    padding:0;
+}
+
+.descricao {
+    border-bottom:1px solid #E8E4BF;
+    border-right:8px solid #F3F3EC;
+    padding:7px 0;
+    width:35%;
+    border-collapse:collapse;
+    border-spacing:0;
+    font-family:Verdana,Arial,Helvetica,sans-serif;
+    font-size:11px;
+    font-size-adjust:none;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    line-height:normal;    
+}
+
+.conteudo .box_2 .titulo .botoes {
+    margin:0 auto;
+    text-align:center;
+//    width:19%;
+    font-family:Verdana,Arial,Helvetica,sans-serif;
+    font-size:11px;
+    font-size-adjust:none;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:bold;
+    line-height:normal;
+    text-align:center;
+}
+
+img.btnOk, img.btnEditar, img.btnExcluir, img.btnAtivar, img.btnInativar {
+    cursor:pointer;
+    height:15px;
+    margin:0 0 0 3px;
+    width:15px;
+}
+
+table.Resultado thead td {
+    background-attachment:scroll;
+    background-color:#D2E1E6;
+    background-position:0 0;
+    background-repeat:repeat;
+    border-collapse:collapse;
+    border-color:-moz-use-text-color -moz-use-text-color -moz-use-text-color #93AFBA;
+    border-style:none none none solid;
+    border-width:medium medium medium 1px;
+    color:#055A78;
+    font-weight:bold;
+    padding:3px;
+    text-align:left;
+    vertical-align:middle;
+}
+
+table.Resultado {
+    border-spacing:0;
+    font-family:Verdana,Arial,Helvetica,sans-serif;
+    font-size:8pt;
+    font-size-adjust:none;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    line-height:normal;
+}

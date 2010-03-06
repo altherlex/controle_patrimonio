@@ -38,4 +38,22 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
+  require 'pdf/writer'
+end
+
+class Object
+	def nil_or_blank?
+		self.to_nil!.nil?
+	end
+  
+	def to_nil!
+		case self.class.to_s
+			when 'Fixnum'
+				return self == 0 ? nil : self
+			when 'Date', 'Time', 'DateTime'
+				return self.to_s == '' ? nil : self
+			else
+				return self.to_s.strip == '' ? nil : self
+		end
+	end
 end

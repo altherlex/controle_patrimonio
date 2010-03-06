@@ -7,6 +7,11 @@ class PatrimoniosController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @patrimonios }
+      format.pdf do
+        patrimonios = Patrimonio.carregar_patrimonios( params[:codigo], params[:titulo], params[:situacao] )
+        rel = PatrimonioRelatorio.new
+        send_data rel.render( patrimonios ), :filename => "patrimonios.pdf", :type => 'application/pdf', :disposition => 'inline'
+      end
     end
   end
 
@@ -44,7 +49,7 @@ class PatrimoniosController < ApplicationController
 
     respond_to do |format|
       if @patrimonio.save
-        flash[:notice] = 'Patrimonio was successfully created.'
+        flash[:notice] = 'Patrimonio criado com sucesso.'
         format.html { redirect_to(@patrimonio) }
         format.xml  { render :xml => @patrimonio, :status => :created, :location => @patrimonio }
       else
@@ -61,7 +66,7 @@ class PatrimoniosController < ApplicationController
 
     respond_to do |format|
       if @patrimonio.update_attributes(params[:patrimonio])
-        flash[:notice] = 'Patrimonio was successfully updated.'
+        flash[:notice] = 'Patrimonio salvo com sucesso.'
         format.html { redirect_to(@patrimonio) }
         format.xml  { head :ok }
       else
@@ -81,5 +86,27 @@ class PatrimoniosController < ApplicationController
       format.html { redirect_to(patrimonios_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def carregar_lst_patrimonio
+  	objetos = Patrimonio.carregar_patrimonios( params[:codigo], params[:titulo], params[:situacao] )
+  	render :text => montar_html( objetos )
+  rescue => e
+  	render :text => 'erro'
+  end
+  
+  private
+  def montar_html( p_objetos )
+  	retorno_html = ''
+  	p_objetos.each do |it|
+  		retorno_html << "<tr>"
+  		retorno_html << "<td>#{it.id}</td>"
+  		retorno_html << "<td><a href='/patrimonios/#{it.id}'>#{it.titulo}</a></td>"
+  		retorno_html << "<td>#{it.situacao}</td>"
+ 		retorno_html << "<td><a onclick=\"if (confirm('Tem certeza?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', '_method'); m.setAttribute('value', 'delete'); f.appendChild(m);f.submit(); };return false;\" href='/patrimonios/#{it.id}'><img src='/images/del.gif' onclick='' class='btnEditar' title='Excluir'/></a></td>"
+#<%= link_to 'Destroy', patrimonio, :confirm => 'Tem certeza?', :method => :delete %></td>
+  		retorno_html << "</tr>"
+  	end
+  	retorno_html
   end
 end

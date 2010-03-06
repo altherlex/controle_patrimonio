@@ -1,24 +1,65 @@
-<h1>Listing patrimonios</h1>
+<% 
+	@menu_lateral = [ "#{link_to 'Criar', new_patrimonio_path}", "#{link_to 'Consultar', patrimonios_path}"]
+%>
+<div class='topo'>
+	<p class='icone'><%= image_tag("arq_32.png") %></p>
+	<p class='titulo'>Consultar Patrimonio</p>
+</div>
 
-<table>
-  <tr>
-    <th>Descricao</th>
-    <th>Situacao</th>
-    <th>Motivo</th>
-  </tr>
-
-<% @patrimonios.each do |patrimonio| %>
-  <tr>
-    <td><%=h patrimonio.descricao %></td>
-    <td><%=h patrimonio.situacao %></td>
-    <td><%=h patrimonio.motivo %></td>
-    <td><%= link_to 'Show', patrimonio %></td>
-    <td><%= link_to 'Edit', edit_patrimonio_path(patrimonio) %></td>
-    <td><%= link_to 'Destroy', patrimonio, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+<div class='box_1'>
+<div class='titulo'>Filtro de pesquisa</div>
+<div class='corpo'>
+<table class='parametros_filtro'>
+	<tr>
+		<td class='campo'>Codigo</td>
+		<td><%= text_field_tag :id%></td>
+	</tr>
+	<tr>
+		<td class='campo'>Titulo</td>
+		<td><%= text_field_tag :titulo, nil, {:style=>'width:100%'}%></td>
+	</tr>
+	<tr>
+		<td class='campo'>Situacao</td>
+		<td><%= select_tag :situacao, options_for_select( [['Todos', 'T'], ['Ativo', 'A'], ['Inativo', 'I']], '') %></td>
+	</tr>
 </table>
+<div class='botao'><input type='button' class='botao' id='pesquisar' value='Pesqusiar' onclick="fn_carregar_patrimonios();"></div>
+</div>
+</div>
 
-<br />
+<div class='box_2'>
+<div class='titulo'>
+	<div class='botoes'><%= link_to 'Gerar pdf', nil , { :onclick => "this.href = 'patrimonios.pdf?codigo='+$F('id')+'&titulo='+$F('titulo')+'&situacao='+$F('situacao'); window.open(this.href);return false;"} %></div>	
+	<!-- formatted_patrimonios_path(:pdf) -->
+</div>
+<div class='corpo'>
+<table class='Resultado'>
+	<thead>
+		<tr>
+			<td>Codigo</td>
+	    	<td>Titulo</td>
+	    	<td>Situacao</td>
+	    	<td style='width:25px;'></td>
+	  	</tr>
+	</thead>
+	<tbody id='lst_patrimonio'>
+		<!-- popula por requisicao AJAX -->
+	</tbody>
+</table>
+</div>
+</div>
+<script>
 
-<%= link_to 'New patrimonio', new_patrimonio_path %>
+
+
+function fn_carregar_patrimonios(){
+	if ( $F('id') == '' && $F('titulo') == '' && $F('situacao') == '' ){
+		alert('Um dos campos deve ser preenchido.');
+		return
+	}
+
+	new Ajax.Updater( 'lst_patrimonio', '/patrimonios/carregar_lst_patrimonio', {
+	  parameters: { codigo: $F('id'), titulo: $F('titulo'), situacao: $F('situacao')  }
+	});
+}
+</script>

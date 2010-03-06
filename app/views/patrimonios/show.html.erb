@@ -1,18 +1,56 @@
-<p>
-  <b>Descricao:</b>
-  <%=h @patrimonio.descricao %>
-</p>
+<% 
+	@menu_lateral = [ "#{link_to 'Criar', new_patrimonio_path}", "#{link_to 'Consultar', patrimonios_path}"]
+%>
+<div class='topo'>
+	<p class='icone'><%= image_tag("arq_32.png") %></p>
+	<p class='titulo'>Visualizar Patrimonio</p>
+</div>
 
-<p>
-  <b>Situacao:</b>
-  <%=h @patrimonio.situacao %>
-</p>
-
-<p>
-  <b>Motivo:</b>
-  <%=h @patrimonio.motivo %>
-</p>
-
-
-<%= link_to 'Edit', edit_patrimonio_path(@patrimonio) %> |
-<%= link_to 'Back', patrimonios_path %>
+<div class='box_2'>
+<div class='titulo'>
+	<div class='botoes'>
+		<%= link_to 'Editar', edit_patrimonio_path(@patrimonio), :class => 'botoes' %> | 
+		<%= link_to_function 'Voltar', "location.href='/patrimonios';" %>
+	</div>
+</div>
+<div class='corpo'>
+<table>
+	<tr>
+		<td class='campo'>Codigo</td>
+		<td class='descricao'><%=h @patrimonio.id %></td>
+	</tr>
+	<tr>
+		<td class='campo'>Titulo</td>
+		<td class='descricao'><%=h @patrimonio.titulo %></td>
+	</tr>
+	<tr>
+		<td class='campo'>Descricao</td>
+    	<td class='descricao'><%=h @patrimonio.descricao %></td>
+	</tr>
+	<tr>
+    	<td class='campo'>Situacao</td>
+    	<td class='descricao'><%=h @patrimonio.situacao %></td>
+	</tr>
+	<tr style="display: <%= (@patrimonio.ativo?)? 'none' : '' %>">
+    	<td class='campo'>Motivo</td>
+    	<td class='descricao'><%=h @patrimonio.motivo %></td>
+	</tr>  
+	<tr>
+		<td class='campo'>Segmento</td>
+    	<td class='descricao'><%=h @patrimonio.dsc_segmento %></td>
+	</tr>
+	<tr>
+    	<td class='campo'>Estado fisico</td>
+	   	<td class='descricao'><%=h @patrimonio.dsc_estado_fisico %></td>
+	</tr>
+	<tr>
+    	<td class='campo'>Voltagem</td>
+		<td class='descricao'><%=h @patrimonio.voltagem %></td>
+	</tr>
+	<tr>
+    	<td class='campo'>Tipo de conector</td>
+		<td class='descricao'><%=h @patrimonio.tipo_conector %></td>
+	</tr>
+</table>
+</div>
+</div>
